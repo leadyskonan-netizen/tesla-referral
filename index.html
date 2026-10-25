@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>テスラ モデルY 紹介コード | オーナーからのご紹介</title>
+<meta name="description" content="テスラ モデルYオーナーの紹介コードをご利用いただけます。購入前にオーナーへ質問も歓迎です。">
+<style>
+  :root {
+    --bg: #fafafa; --fg: #171a20; --muted: #5c5e62; --card: #ffffff;
+    --line: #e3e4e6; --accent: #3e6ae1; --accent-fg: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111214; --fg: #f4f4f4; --muted: #a0a3a8; --card: #1b1c1f; --line: #2e3035; --accent: #5b82f0; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font-family: -apple-system, "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif; line-height: 1.8; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+  h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.3; margin: 0 0 12px; }
+  h2 { font-size: 1.25rem; margin: 48px 0 12px; }
+  p { margin: 0 0 12px; }
+  .lead { color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-top: 28px; }
+  .code { font-size: 1.8rem; font-weight: 700; letter-spacing: .08em; font-family: ui-monospace, Consolas, monospace;
+    word-break: break-all; margin: 4px 0 16px; }
+  .label { font-size: .85rem; color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { appearance: none; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-fg);
+    padding: 12px 20px; border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+  .btn.sub { background: transparent; color: var(--accent); }
+  .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  ol, ul { padding-left: 1.4em; margin: 0 0 12px; }
+  li { margin-bottom: 6px; }
+  details { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  .note { font-size: .82rem; color: var(--muted); margin-top: 48px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>テスラ モデルY<br>オーナーからのご紹介</h1>
+  <p class="lead">モデルYを購入したオーナーです。紹介コードを使ってご注文いただくと、特典を受けられる場合があります。購入を検討中の方は、実際の使用感についてもお気軽にご質問ください。</p>
+
+  <section class="card" aria-labelledby="code-h">
+    <div class="label" id="code-h">私の紹介コード</div>
+    <div class="code" id="code"></div>
+    <div class="actions">
+      <a class="btn" id="link" href="#" rel="noopener">紹介リンクから注文する</a>
+      <button class="btn sub" id="copy" type="button">コードをコピー</button>
+    </div>
+  </section>
+
+  <h2>ご利用方法</h2>
+  <ol>
+    <li>上の「紹介リンクから注文する」を開く(またはコードをコピー)</li>
+    <li>テスラ公式サイトでモデルYの注文手続きに進む</li>
+    <li>注文時に紹介コードが適用されているか確認する</li>
+  </ol>
+  <p>コードを手入力する場合は、注文画面の紹介コード入力欄に貼り付けてください。</p>
+
+  <h2>特典について</h2>
+  <p id="benefit"></p>
+
+  <h2>よくある質問</h2>
+  <details><summary>紹介コードを使うと価格は変わりますか?</summary>
+    <p>特典の内容・条件はテスラが随時決めており、変更・終了することがあります。必ず注文画面や公式サイトの最新情報をご確認ください。</p></details>
+  <details><summary>オーナーに質問できますか?</summary>
+    <p>購入前の疑問(充電、住宅事情、納車までの流れなど)はお気軽にどうぞ。連絡先は下記をご覧ください。</p></details>
+  <details><summary>他の人の紹介コードとの併用はできますか?</summary>
+    <p>紹介コードは通常1回の注文につき1つのみ有効です。詳細は公式の規約をご確認ください。</p></details>
+
+  <h2>連絡先</h2>
+  <p id="contact"></p>
+
+  <p class="note">当サイトは個人のテスラオーナーによる非公式の紹介ページであり、Tesla, Inc. およびその関連会社とは関係ありません。Tesla の名称・商標は各権利者に帰属します。特典内容は予告なく変更される場合があります。紹介により、運営者が特典を受け取る場合があります。</p>
+</main>
+
+<script>
+  // ★ ここを自分の情報に書き換えてください ★
+  const CONFIG = {
+    code: "leadyskonan250326",               // 紹介コード
+    link: "https://ts.la/leadyskonan250326", // 紹介リンク(Teslaアプリで確認できるURL)
+    benefit: "(例)紹介コード経由でご注文いただくと、スーパーチャージャー無料充電などの特典が付く場合があります。最新の内容は公式サイトでご確認ください。",
+    contact: "(例)X: @your_id / メール: you@example.com"
+  };
+
+  document.getElementById("code").textContent = CONFIG.code;
+  document.getElementById("link").href = CONFIG.link;
+  document.getElementById("benefit").textContent = CONFIG.benefit;
+  document.getElementById("contact").textContent = CONFIG.contact;
+
+  const btn = document.getElementById("copy");
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(CONFIG.code);
+      btn.textContent = "コピーしました ✓";
+    } catch {
+      btn.textContent = "コピーに失敗しました";
+    }
+    setTimeout(() => (btn.textContent = "コードをコピー"), 2000);
+  });
+</script>
+</body>
+</html>
